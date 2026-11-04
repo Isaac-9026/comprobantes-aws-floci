@@ -85,7 +85,6 @@ export function App() {
               <Cloud size={26} className="text-white" />
             </div>
             <div>
-              <div className="brand-badge-top">AWS ARCHITECTURE • FLOCI</div>
               <h1 className="brand-title">App Automatizar gestión de comprobantes</h1>
               <p className="brand-subtitle">
                 Extracción OCR con <span className="aws-highlight">Amazon Textract</span>, almacenamiento en{' '}
@@ -201,16 +200,20 @@ export function App() {
         />
       )}
 
-      {/* Footer */}
+      {/* Footer Bien Acomodado */}
       <footer className="app-footer">
         <div className="footer-container">
-          <p>
-            <strong>App Automatizar gestión de comprobantes</strong> • FastAPI + boto3 y React +
-            TypeScript
-          </p>
-          <p className="text-muted text-xs">
-            Servicios AWS emulados con Floci en <code>http://localhost:4566</code>
-          </p>
+          <div className="footer-left">
+            <span className="footer-brand">App Automatizar gestión de comprobantes</span>
+            <span className="footer-sep">•</span>
+            <span className="footer-tech">FastAPI & Boto3 + React & TypeScript</span>
+          </div>
+          <div className="footer-right">
+            <span className="footer-chip">
+              <span className="footer"></span>
+              Amazon S3  |  DynamoDB  |  Textract
+            </span>
+          </div>
         </div>
       </footer>
     </div>

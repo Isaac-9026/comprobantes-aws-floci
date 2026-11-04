@@ -8,7 +8,7 @@ import {
   User,
   Store,
   MessageSquare,
-  Sparkles,
+  FileScan,
   CheckCircle2,
   RefreshCw,
   Cpu,
@@ -153,7 +153,7 @@ export const ComprobanteForm: React.FC<ComprobanteFormProps> = ({
       <div className="card-header">
         <div className="card-title-group">
           <div className="card-icon-badge bg-primary-gradient text-white">
-            <Sparkles size={20} />
+            <FileScan size={21} />
           </div>
           <div>
             <h2 className="card-title">Automatizar Nuevo Comprobante</h2>
@@ -217,7 +217,7 @@ export const ComprobanteForm: React.FC<ComprobanteFormProps> = ({
                 id="usuario"
                 type="text"
                 className="form-control"
-                placeholder="Ej. Isaac Paucar"
+                placeholder="Ej. Isaac Isai"
                 value={usuario}
                 onChange={(e) => setUsuario(e.target.value)}
                 disabled={cargando}
@@ -241,7 +241,6 @@ export const ComprobanteForm: React.FC<ComprobanteFormProps> = ({
                   onClick={() => setTienda(t)}
                   disabled={cargando}
                 >
-                  <span className="store-chip-dot"></span>
                   {t}
                 </button>
               ))}
@@ -278,7 +277,7 @@ export const ComprobanteForm: React.FC<ComprobanteFormProps> = ({
                 </>
               ) : (
                 <>
-                  <Sparkles size={18} />
+                  <FileScan size={18} />
                   <span>Procesar y Guardar Comprobante</span>
                   <ArrowRight size={16} />
                 </>
@@ -292,7 +291,7 @@ export const ComprobanteForm: React.FC<ComprobanteFormProps> = ({
             /* PIPELINE ANIMADO DE LOS 3 SERVICIOS DE AWS */
             <div className="aws-pipeline-card">
               <h4 className="pipeline-title">
-                <Sparkles size={18} className="text-primary inline mr-2" />
+                <Cpu size={18} className="text-primary inline mr-2" />
                 Pipeline Serverless en Ejecución
               </h4>
               <p className="pipeline-subtitle">

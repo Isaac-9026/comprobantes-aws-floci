@@ -41,13 +41,6 @@ export const ComprobanteTable: React.FC<ComprobanteTableProps> = ({
     });
   }, [comprobantes, filtroTipo, filtroTienda, searchTerm]);
 
-  // Generador de iniciales para el avatar
-  const getInitials = (nombre: string) => {
-    const parts = nombre.trim().split(' ');
-    if (parts.length >= 2) return `${parts[0][0]}${parts[1][0]}`.toUpperCase();
-    return (nombre.slice(0, 2) || 'US').toUpperCase();
-  };
-
   return (
     <div className="card bento-card">
       {/* Header de la Tabla */}
@@ -152,16 +145,9 @@ export const ComprobanteTable: React.FC<ComprobanteTableProps> = ({
             <tbody>
               {comprobantesFiltrados.map((c) => (
                 <tr key={c.id} className="table-row">
-                  {/* Tipo con Dot */}
+                  {/* Tipo Limpio */}
                   <td>
-                    <span
-                      className={`badge-dot-container ${
-                        c.tipo_comprobante === 'Factura'
-                          ? 'badge-factura-dot'
-                          : 'badge-boleta-dot'
-                      }`}
-                    >
-                      <span className="dot-pulse"></span>
+                    <span className="tipo-documento">
                       {c.tipo_comprobante}
                     </span>
                   </td>
@@ -169,12 +155,9 @@ export const ComprobanteTable: React.FC<ComprobanteTableProps> = ({
                   {/* Fecha de Emisión */}
                   <td className="font-mono text-nowrap text-slate">{c.fecha_emision}</td>
 
-                  {/* Usuario con Avatar */}
+                  {/* Usuario Limpio */}
                   <td>
-                    <div className="user-avatar-group">
-                      <div className="avatar-circle">{getInitials(c.usuario)}</div>
-                      <span className="user-name">{c.usuario}</span>
-                    </div>
+                    <span className="user-name">{c.usuario}</span>
                   </td>
 
                   {/* Tienda */}
